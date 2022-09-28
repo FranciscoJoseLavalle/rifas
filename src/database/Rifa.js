@@ -3,10 +3,9 @@ import mongoose from "mongoose";
 const collection = "Rifas";
 
 const rifasSchema = new mongoose.Schema({
+    number: Number,
     name: String,
-    email: String,
-    password: String,
-    products: Array
+    payed: Boolean
 })
 
 const rifasService = mongoose.model(collection,rifasSchema);
