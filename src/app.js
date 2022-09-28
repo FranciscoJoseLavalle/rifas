@@ -24,6 +24,13 @@ app.post('/', async (req, res) => {
 
     res.send({ message: "added succesfully" })
 })
+app.put('/', async (req, res) => {
+    const { number } = req.body;
+
+    await rifasService.findOneAndUpdate({ number: number }, req.body)
+
+    res.send({ message: "updated succesfully" })
+})
 app.delete('/', async (req, res) => {
 
     await rifasService.deleteOne({ number: req.body.number})
